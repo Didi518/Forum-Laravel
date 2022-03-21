@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +13,9 @@ use App\Http\Controllers\MainController;
 |
 */
 
-Route::get('/user/{id}', [MainController::class, 'show']);
+Route::get('/', function () {
+   
+    $a = 1 + 4;
+
+    return $a;
+});

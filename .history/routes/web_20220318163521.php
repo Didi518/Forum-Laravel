@@ -14,4 +14,4 @@ use App\Http\Controllers\MainController;
 |
 */
 
-Route::get('/user/{id}', [MainController::class, 'show']);
+Route::get('/user/', [MainController::class, 'show']);
