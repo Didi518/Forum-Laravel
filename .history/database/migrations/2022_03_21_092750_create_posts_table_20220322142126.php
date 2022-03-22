@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\Category;
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -24,7 +25,6 @@ return new class extends Migration
 
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Category::class);
-            // $table->foreignIdFor(Comments::class);
         });
     }
 

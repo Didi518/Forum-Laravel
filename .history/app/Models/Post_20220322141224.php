@@ -14,15 +14,15 @@ class Post extends Model
 
     protected $guarded = [];
     
-    // public static function boot(){
+    public static function boot(){
 
-    //     parent::boot();
+        parent::boot();
 
-    //     self::creating(function($post){
-    //         $post->user()->associate(auth()->user()->id);
-    //         $post->category()->associate(request()->category);
-    //     });
-    // }
+        self::creating(function($post){
+            $post->user()->associate(auth()->user()->id());
+            $post->category()->associate(request()->category);
+        });
+    }
     public function comments(){
         return $this->hasMany(Comments::class);
     }

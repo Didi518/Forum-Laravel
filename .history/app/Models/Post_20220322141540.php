@@ -13,16 +13,16 @@ class Post extends Model
     use HasFactory;
 
     protected $guarded = [];
-    
-    // public static function boot(){
 
-    //     parent::boot();
+    public static function boot(){
 
-    //     self::creating(function($post){
-    //         $post->user()->associate(auth()->user()->id);
-    //         $post->category()->associate(request()->category);
-    //     });
-    // }
+        parent::b oot();
+
+        self::creating(function($post){
+            $post->user()->associate(auth()->user()->id);
+            $post->category()->associate(request()->category);
+        });
+    }
     public function comments(){
         return $this->hasMany(Comments::class);
     }
