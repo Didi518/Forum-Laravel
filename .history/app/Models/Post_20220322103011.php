@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Category;
-use App\Models\Comments;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -18,9 +17,7 @@ class Post extends Model
 
         parent::boot();
     }
-    public function comments(){
-        return $this->hasMany(Comments::class);
-    }
+
 
     public function user(){
 
