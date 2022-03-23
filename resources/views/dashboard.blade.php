@@ -12,9 +12,12 @@
         {{ session('success') }}
         @endif
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                @foreach ($posts as $post)
                 <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+                    <a href="{{ route('posts.edit', $post) }}" class="bg-yellow-500 px-2 py-3 block">Editer {{ $post->tittle }} </a>
+                    <a href="{{ route('posts.destroy', $post) }}" class="bg-red-500 px-2 py-3 block">Supprimer {{ $post->tittle }} </a>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
